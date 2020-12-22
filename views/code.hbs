@@ -1,0 +1,75 @@
+<pre>
+  {{#each headers ~}}
+    <strong>{{this.name~}}</strong>
+    {{~this.content}}
+  {{/each}}
+</pre>
+
+<pre>
+  {{~#each resheaders ~}}
+    <strong>{{this.name~}}</strong>
+    {{~this.content}}
+  {{/each}}
+</pre>
+<pre><code>
+<pre>
+{
+  {{#each data}}
+  {{#if this.isArray}}
+    {{#if this.isObject}}        
+      {{#if this.isLink}}
+  <span class="key"><span class="delimiter">"</span><span class="content">{{this.key}}</span><span class="delimiter">"</span></span>: [
+    {{#each this.string}}
+    {     
+      <span class="key"><span class="delimiter">"</span><span class="content">network</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">{{this.network}}</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">link</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content"><a href={{this.link}}>{{this.link}}</a></span><span class="delimiter">"</span></span>,
+    },
+    {{/each}}
+  ]
+      {{/if}}
+    {{/if}}
+  {{/if}}
+  {{#if this.isArray}}
+    {{#if this.isLink}}
+      {{#unless this.isObject}}
+  <span class="key"><span class="delimiter">"</span><span class="content">{{this.key}}</span><span class="delimiter">"</span></span>: [
+      {{#each this.string}}
+    <span class="key"><span class="delimiter">"</span><span class="content"><a href={{this}}>{{this}}</a></span><span class="delimiter">"</span></span>,
+      {{/each}}
+  ],
+      {{/unless}}
+    {{/if}}
+  {{#if this.isArray}}
+  {{#unless this.isLink}}
+  {{#unless this.isObject}}
+  <span class="key"><span class="delimiter">"</span><span class="content">{{this.key}}</span><span class="delimiter">"</span></span>: [
+  {{#each this.string}}
+    <span class="string"><span class="delimiter">"</span><span class="content">{{this}}</span><span class="delimiter">"</span></span>,
+  {{/each}}
+  ],
+  {{/unless}}
+  {{/unless}}
+  {{/if}}
+  {{/if}}
+  {{#unless this.isArray}}
+  {{#unless this.isObject}}
+  <span class="key"><span class="delimiter">"</span><span class="content">{{this.key}}</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">{{this.string}}</span><span class="delimiter">"</span></span>,
+  {{/unless}}
+  {{/unless}}
+  {{/each}}
+}
+</pre>
+</code></pre>
+
+<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>

@@ -1,15 +1,20 @@
 const express = require("express");
 const hbs = require("express-handlebars");
 const path = require("path");
+const cors = require("cors");
+const homeKeys = require("./data/home");
+const aboutKeys = require("./data/about");
+const projectKeys = require("./data/projects");
+const notFoundKeys = require("./data/404");
 const app = express();
 
 app.engine("hbs", hbs({ extname: "hbs" }));
 app.set("view engine", "hbs");
-
+app.use(cors());
 const port = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, "/public")));
-
+app.use(headersMiddleware);
 const headers = [
   { name: "GET: ", content: "" },
   { name: "Accept: ", content: "application/json" },
@@ -19,8 +24,7 @@ const headers = [
   },
   {
     name: "User-agent: ",
-    content:
-      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
+    content: "",
   },
 ];
 
@@ -37,19 +41,62 @@ const statusToMessage = {
   404: "Not Found",
 };
 
-app.get("/", (req, res) => {
+function headersMiddleware(req, res, next) {
+  const date = new Date();
   headers[0].content = `${req.url} HTTP v${req.httpVersion}`;
   headers[2].content = req.hostname;
-  resheaders[0].name = `HTTP v${req.httpVersion}: ${res.statusCode} ${
+  headers[3].content = req.headers["user-agent"];
+  resheaders[0].name = `HTTP v${req.httpVersion}: `;
+  resheaders[0].content = `${res.statusCode} ${
     statusToMessage[res.statusCode]
   }`;
-  console.log(req.headers["content-length"]);
-  res.render("home", {
+  resheaders[1].content = "Tue, 22 Dec 2020 19:02:38 GMT";
+  resheaders[4].content = date.toUTCString();
+  next();
+}
+
+app.get("/", (req, res) => {
+  res.render("code", {
     title: "/home",
-    name: "amaan",
     headers,
     status: `status-${res.statusCode}`,
     resheaders,
+    data: homeKeys,
+  });
+});
+
+app.get("/about", (req, res) => {
+  res.render("code", {
+    title: "/about",
+    headers,
+    status: `status-${res.statusCode}`,
+    resheaders,
+    data: aboutKeys,
+  });
+});
+
+app.get("/projects", (req, res) => {
+  res.render("code", {
+    title: "/projects",
+    headers,
+    status: `status-${res.statusCode}`,
+    resheaders,
+    data: projectKeys,
+  });
+});
+
+app.get("/home", (req, res) => {
+  res.redirect("/");
+});
+
+app.use((req, res, next) => {
+  resheaders[0].content = `404 ${statusToMessage[404]}`;
+  res.status(404).render("code", {
+    title: "/projects",
+    headers,
+    status: `status-${res.statusCode}`,
+    resheaders,
+    data: notFoundKeys,
   });
 });
 
