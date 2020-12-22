@@ -1,0 +1,133 @@
+:root {
+  --fonts: "Fira Code", "Monaco", "Inconsolata", "Roboto Mono", "Ubuntu Mono",
+    "Consolas", "Courier New", Courier, monospace;
+}
+
+body {
+  background-color: #212121;
+  color: white;
+  font-family: var(--fonts);
+  font-size: 1.25rem;
+  margin: 0 auto;
+  padding: 1rem;
+  left: 0;
+  top: 0;
+  max-width: 50rem;
+}
+
+body.status-404,
+body.status-302 {
+  background-color: #073628;
+}
+
+body.status-500,
+body.status-501 {
+  background-color: #360715;
+}
+
+h1,
+h2 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1;
+  margin: 0;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+pre {
+  font-family: var(--fonts);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+h1,
+h2,
+.contacts {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+pre code .key {
+  font-weight: bold;
+  color: lightgoldenrodyellow;
+}
+
+pre code .string {
+  color: lightgreen;
+}
+
+pre code .integer {
+  color: orange;
+}
+
+a {
+  color: royalblue;
+  font-weight: bold;
+  transition: color 255ms, background-color 255ms, font-weight 255ms;
+}
+
+a:hover {
+  color: white;
+  background-color: royalblue;
+}
+
+pre code .line-numbers {
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  /* background-color: rgba(255, 255, 255, .2); */
+  margin-right: 0.5rem;
+}
+
+pre code .line-numbers a {
+  text-decoration: none;
+  font-weight: normal;
+  color: gainsboro;
+}
+
+pre code .line-numbers a:hover {
+  color: gainsboro;
+  background-color: transparent;
+}
+
+pre code table {
+  font-size: 1.25rem;
+  margin-left: -1rem;
+}
+
+pre code table .code {
+  padding-left: 0.5rem;
+}
+
+body.light {
+  background-color: #eaeaea;
+  color: #222;
+}
+
+body.light pre code .key {
+  color: darkorange;
+}
+
+body.light pre code .string {
+  color: darkgreen;
+}
+
+body.light pre code .integer {
+  color: magenta;
+}
+
+body.light pre code .line-numbers {
+  background-color: transparent;
+}
+
+body.light pre code .line-numbers a {
+  color: gray;
+}
+
+body.light pre code .line-numbers a:hover {
+  color: gray;
+  background-color: transparent;
+}
