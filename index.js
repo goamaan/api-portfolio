@@ -1,7 +1,6 @@
 const express = require("express");
 const hbs = require("express-handlebars");
 const path = require("path");
-const cors = require("cors");
 const homeKeys = require("./data/home");
 const aboutKeys = require("./data/about");
 const projectKeys = require("./data/projects");
@@ -10,7 +9,7 @@ const app = express();
 
 app.engine("hbs", hbs({ extname: "hbs" }));
 app.set("view engine", "hbs");
-app.use(cors());
+
 const port = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, "/public")));
@@ -56,6 +55,7 @@ function headersMiddleware(req, res, next) {
 }
 
 app.get("/", (req, res) => {
+  resheaders[2].content = 3823;
   res.render("code", {
     title: "/home",
     headers,
@@ -66,6 +66,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
+  resheaders[2].content = 4523;
   res.render("code", {
     title: "/about",
     headers,
@@ -76,6 +77,7 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/projects", (req, res) => {
+  resheaders[2].content = 5198;
   res.render("code", {
     title: "/projects",
     headers,

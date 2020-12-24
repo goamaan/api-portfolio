@@ -15,8 +15,7 @@ const projectKeys = [
   },
   {
     key: "content",
-    string:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium qui fugit consequuntur, suscipit fuga explicabo dolor iusto nam iste deserunt cupiditate quod",
+    string: "Some of my favorite personal projects. More on my Github!",
     isLink: false,
     isArray: false,
     isObject: false,
@@ -25,21 +24,34 @@ const projectKeys = [
     key: "projects",
     string: [
       {
-        network: "Github",
-        link: "https://github.com/amaan18",
+        name: "Github-Battle",
+        description:
+          "Web App that displays the most popular Repositories on Github and allows the users to 'Battle' github profiles",
+        technology: "React, Redux, and the Github API",
+        live: "https://react-git-battle.netlify.app",
+        github: "https://github.com/Amaan18/github-battle",
       },
       {
-        network: "LinkedIn",
-        link: "https://linkedin.com/in/amaangokak18",
+        name: "Search Algorithm Visualizer",
+        description:
+          "A visualizer for the A* Search Algorithm implemented using a Binary Heap to optimize access times",
+        technology: "Javascript (p5.js for visualization)",
+        live: "https://astar-visualization.netlify.app",
+        github: "https://github.com/Amaan18/A-star-pathfinding",
       },
       {
-        network: "Email",
-        link: "mailto:amaangokak18@gmail.com",
+        name: "Campground Reviews",
+        description:
+          "Full stack Web App for community based Campground Reviews. CRUD functionality with User Authentication, and use of the Google Maps API",
+        technology: "NodeJs, ExpressJs, MongoDB, EJS templating",
+        live: "https://whoevenlikescamping.herokuapp.com",
+        github: "https://github.com/Amaan18/YelpCamp",
       },
     ],
     isLink: true,
     isArray: true,
     isObject: true,
+    isProject: true,
   },
 ];
 

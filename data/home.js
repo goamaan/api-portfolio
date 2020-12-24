@@ -1,7 +1,7 @@
 const homeKeys = [
   {
     key: "title",
-    string: "Me",
+    string: "amaan18.github.io",
     isLink: false,
     isArray: false,
     isObject: false,
@@ -15,8 +15,7 @@ const homeKeys = [
   },
   {
     key: "content",
-    string:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium qui fugit consequuntur, suscipit fuga explicabo dolor iusto nam iste deserunt cupiditate quod",
+    string: "Portfolio API - Use the pages above to navigate!",
     isLink: false,
     isArray: false,
     isObject: false,

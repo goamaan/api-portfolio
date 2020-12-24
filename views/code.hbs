@@ -1,3 +1,12 @@
+<p id="myDiv" text="Fetching response...">
+  Fetching Response...
+</p>
+
+<div class="progress">
+  <div class="progress-value"></div>
+</div>
+
+<div id="main">
 <pre>
   {{#each headers ~}}
     <strong>{{this.name~}}</strong>
@@ -11,21 +20,38 @@
     {{~this.content}}
   {{/each}}
 </pre>
+
+<div class="code">
 <pre><code>
 <pre>
 {
   {{#each data}}
+  {{#if this.isProject}}
+  <span class="key"><span class="delimiter">"</span><span class="content">{{this.key}}</span><span class="delimiter">"</span></span>: [
+    {{#each this.string}}
+    {     
+      <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">{{this.name}}</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">description</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">{{this.description}}</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">technology</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">{{this.technology}}</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">live</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content"><a href={{this.live}}  target="_blank">{{this.live}}</a></span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">github</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content"><a href={{this.github}}  target="_blank">{{this.github}}</a></span><span class="delimiter">"</span></span>,
+    },
+    {{/each}}
+  ]
+  {{/if}}
   {{#if this.isArray}}
     {{#if this.isObject}}        
       {{#if this.isLink}}
+      {{#unless this.isProject}}
   <span class="key"><span class="delimiter">"</span><span class="content">{{this.key}}</span><span class="delimiter">"</span></span>: [
     {{#each this.string}}
     {     
       <span class="key"><span class="delimiter">"</span><span class="content">network</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">{{this.network}}</span><span class="delimiter">"</span></span>,
-      <span class="key"><span class="delimiter">"</span><span class="content">link</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content"><a href={{this.link}}>{{this.link}}</a></span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">link</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content"><a href={{this.link}}  target="_blank">{{this.link}}</a></span><span class="delimiter">"</span></span>,
     },
     {{/each}}
   ]
+  {{/unless}}
       {{/if}}
     {{/if}}
   {{/if}}
@@ -34,7 +60,7 @@
       {{#unless this.isObject}}
   <span class="key"><span class="delimiter">"</span><span class="content">{{this.key}}</span><span class="delimiter">"</span></span>: [
       {{#each this.string}}
-    <span class="key"><span class="delimiter">"</span><span class="content"><a href={{this}}>{{this}}</a></span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content"><a href={{this}} >{{this}}</a></span><span class="delimiter">"</span></span>,
       {{/each}}
   ],
       {{/unless}}
@@ -44,7 +70,7 @@
   {{#unless this.isObject}}
   <span class="key"><span class="delimiter">"</span><span class="content">{{this.key}}</span><span class="delimiter">"</span></span>: [
   {{#each this.string}}
-    <span class="string"><span class="delimiter">"</span><span class="content">{{this}}</span><span class="delimiter">"</span></span>,
+    <span class="string space"><span class="delimiter">"</span><span class="content">{{this}}</span><span class="delimiter">"</span></span>,
   {{/each}}
   ],
   {{/unless}}
@@ -73,3 +99,34 @@
 		<li></li>
 		<li></li>
 	</ul>
+</div>
+</div>
+
+<script type="text/javascript">
+let myDiv = document.getElementById("myDiv");
+let progress = document.querySelector(".progress");
+let myBody = document.getElementById("main");
+if(window.location.pathname=="/" && !(document.referrer.includes("/about") || document.referrer.includes("/projects") || document.referrer.includes("/interests") || document.referrer.includes("/work") || document.referrer.includes("/contact"))) {
+  (function(){
+    
+
+      showLoading = function(){
+        myDiv.style.display = "block";
+        myBody.style.display = "none";
+        setTimeout(hideLoading, 3000); 
+      },
+
+      hideLoading = function(){
+        myDiv.style.display = "none";
+        progress.style.display = "none";
+        myBody.style.display = "block";
+      };
+      
+        showLoading();
+      
+  })();
+    } else {
+      myDiv.style.display = "none";
+      progress.style.display = "none";
+    }
+</script>
