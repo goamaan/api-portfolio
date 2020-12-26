@@ -8,7 +8,7 @@ const notFoundKeys = [
   },
   {
     key: "pages",
-    string: ["/home", "/projects", "/interests", "/work", "/contact"],
+    string: ["/home", "/about", "/projects", "/work", "/contact"],
     isLink: true,
     isArray: true,
     isObject: false,

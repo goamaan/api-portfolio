@@ -3,8 +3,36 @@
     "Consolas", "Courier New", Courier, monospace;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+html {
+  scrollbar-width: none;
+}
+
 #main {
   animation: fadein 0.5s;
+}
+
+#progressBarContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#progressBar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 10px;
+  background: linear-gradient(to top, rgb(255, 255, 255), rgb(80, 80, 80));
+  height: 0;
+  opacity: 0;
 }
 
 body {
@@ -18,10 +46,18 @@ body {
   top: 0;
   max-width: 55rem;
   animation: fadein 0.5s;
-  overflow-x: hidden;
-  z-index: 999;
   height: 100vh;
   width: 100vw;
+}
+
+.successRes {
+  font-size: x-large;
+  color: rgb(85, 233, 85);
+}
+
+.failRes {
+  font-size: x-large;
+  color: rgb(207, 0, 0);
 }
 
 @keyframes fadein {
@@ -35,7 +71,7 @@ body {
 
 body.status-404,
 body.status-302 {
-  background-color: #073628;
+  background-color: #300404;
 }
 
 body.status-500,
@@ -53,7 +89,7 @@ body.status-501 {
 }
 
 .progress {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(82, 82, 82, 0.555);
   margin: 0 14vw;
   border-radius: 100px;
   position: relative;
@@ -199,7 +235,7 @@ body.light pre code .line-numbers a:hover {
   background-color: transparent;
 }
 
-.bg-bubbles {
+/* .bg-bubbles {
   position: absolute;
   top: 0;
   left: 0;
@@ -309,4 +345,4 @@ body.light pre code .line-numbers a:hover {
     -webkit-transform: translateY(-700px) rotate(600deg);
     transform: translateY(-700px) rotate(600deg);
   }
-}
+} */

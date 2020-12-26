@@ -8,14 +8,14 @@ const homeKeys = [
   },
   {
     key: "pages",
-    string: ["/about", "/projects", "/interests", "/work", "/contact"],
+    string: ["/about", "/projects", "/work", "/contact"],
     isLink: true,
     isArray: true,
     isObject: false,
   },
   {
     key: "content",
-    string: "Portfolio API - Use the pages above to navigate!",
+    string: "Portfolio API - Navigate with the pages above",
     isLink: false,
     isArray: false,
     isObject: false,

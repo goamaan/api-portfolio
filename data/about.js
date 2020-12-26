@@ -8,7 +8,7 @@ const aboutKeys = [
   },
   {
     key: "pages",
-    string: ["/home", "/projects", "/interests", "/work", "/contact"],
+    string: ["/home", "/projects", "/work", "/contact"],
     isLink: true,
     isArray: true,
     isObject: false,
