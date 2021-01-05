@@ -1,7 +1,7 @@
 const homeKeys = [
   {
     key: "title",
-    string: "amaan18.github.io",
+    string: "Amaan Gokak - Portfolio",
     isLink: false,
     isArray: false,
     isObject: false,
