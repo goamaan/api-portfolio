@@ -8,7 +8,7 @@ const homeKeys = [
   },
   {
     key: "pages",
-    string: ["/about", "/projects", "/work", "/contact"],
+    string: ["/about", "/projects", "/work"],
     isLink: true,
     isArray: true,
     isObject: false,
@@ -34,6 +34,11 @@ const homeKeys = [
       {
         network: "Email",
         link: "mailto:amaangokak18@gmail.com",
+      },
+      {
+        network: "Resume",
+        link:
+          "https://drive.google.com/file/d/13X6kPqucf0l3wGiFrsxcl-RDafOrCpnN/view?usp=sharing",
       },
     ],
     isLink: true,

@@ -8,7 +8,7 @@ const projectKeys = [
   },
   {
     key: "pages",
-    string: ["/home", "/about", "/work", "/contact"],
+    string: ["/home", "/about", "/work"],
     isLink: true,
     isArray: true,
     isObject: false,

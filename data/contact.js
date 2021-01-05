@@ -1,7 +1,7 @@
-const notFoundKeys = [
+const contactKeys = [
   {
     key: "title",
-    string: "Not found",
+    string: "Send me a message",
     isLink: false,
     isArray: false,
     isObject: false,
@@ -15,11 +15,11 @@ const notFoundKeys = [
   },
   {
     key: "content",
-    string: "Use the pages above to navigate :D",
+    string: ["Name", "Email", "Description"],
     isLink: false,
-    isArray: false,
+    isArray: true,
     isObject: false,
   },
 ];
 
-module.exports = notFoundKeys;
+module.exports = contactKeys;

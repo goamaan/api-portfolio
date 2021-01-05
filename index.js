@@ -6,6 +6,7 @@ const aboutKeys = require("./data/about");
 const projectKeys = require("./data/projects");
 const notFoundKeys = require("./data/404");
 const workKeys = require("./data/work");
+const contactKeys = require("./data/contact");
 const app = express();
 
 app.engine("hbs", hbs({ extname: "hbs" }));
@@ -84,7 +85,7 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/projects", (req, res) => {
-  resheaders[1].content = 5198;
+  resheaders[1].content = 5398;
   res.render("code", {
     title: "/projects",
     headers,
@@ -96,7 +97,7 @@ app.get("/projects", (req, res) => {
 });
 
 app.get("/work", (req, res) => {
-  resheaders[1].content = 5198;
+  resheaders[1].content = 4689;
   res.render("code", {
     title: "/work",
     headers,
@@ -115,7 +116,7 @@ app.use((req, res, next) => {
   httpRes.content = `404 ${statusToMessage[404]}`;
   httpRes.status = false;
   res.status(404).render("code", {
-    title: "/projects",
+    title: "/contact",
     headers,
     status: `status-${res.statusCode}`,
     resheaders,

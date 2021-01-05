@@ -1,14 +1,14 @@
 const workKeys = [
   {
     key: "title",
-    string: "About Me",
+    string: "Work Experience",
     isLink: false,
     isArray: false,
     isObject: false,
   },
   {
     key: "pages",
-    string: ["/home", "/about", "/projects", "/contact"],
+    string: ["/home", "/about", "/projects"],
     isLink: true,
     isArray: true,
     isObject: false,
