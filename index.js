@@ -108,6 +108,15 @@ app.get("/work", (req, res) => {
   });
 });
 
+app.get(
+  "/.well-known/acme-challenge/qYVZezJUSpMAKA7LncD7puQ7h6-Ow2EP3B9fA_cNaWI",
+  (req, res) => {
+    res.send(
+      "qYVZezJUSpMAKA7LncD7puQ7h6-Ow2EP3B9fA_cNaWI.rXNkoEBldKPv9n8SXF_4r8hfXHbwb7pio8qk_F9yGDQ"
+    );
+  }
+);
+
 app.get("/home", (req, res) => {
   res.redirect("/");
 });
@@ -124,14 +133,5 @@ app.use((req, res, next) => {
     httpRes,
   });
 });
-
-app.get(
-  "/.well-known/acme-challenge/qYVZezJUSpMAKA7LncD7puQ7h6-Ow2EP3B9fA_cNaWI",
-  () => {
-    res.send(
-      "qYVZezJUSpMAKA7LncD7puQ7h6-Ow2EP3B9fA_cNaWI.rXNkoEBldKPv9n8SXF_4r8hfXHbwb7pio8qk_F9yGDQ"
-    );
-  }
-);
 
 app.listen(port, () => console.log(`listening on port ${port}`));
