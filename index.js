@@ -126,10 +126,10 @@ app.use((req, res, next) => {
 });
 
 app.get(
-  "/.well-known/acme-challenge/vWaQwBpysX-4vYzrVrTm6UjNBQVhJW930RSjMeKxzis",
+  "/.well-known/acme-challenge/qYVZezJUSpMAKA7LncD7puQ7h6-Ow2EP3B9fA_cNaWI",
   () => {
     res.send(
-      "vWaQwBpysX-4vYzrVrTm6UjNBQVhJW930RSjMeKxzis.rXNkoEBldKPv9n8SXF_4r8hfXHbwb7pio8qk_F9yGDQ"
+      "qYVZezJUSpMAKA7LncD7puQ7h6-Ow2EP3B9fA_cNaWI.rXNkoEBldKPv9n8SXF_4r8hfXHbwb7pio8qk_F9yGDQ"
     );
   }
 );
