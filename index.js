@@ -125,4 +125,13 @@ app.use((req, res, next) => {
   });
 });
 
+app.get(
+  "/.well-known/acme-challenge/vWaQwBpysX-4vYzrVrTm6UjNBQVhJW930RSjMeKxzis",
+  () => {
+    res.send(
+      "vWaQwBpysX-4vYzrVrTm6UjNBQVhJW930RSjMeKxzis.rXNkoEBldKPv9n8SXF_4r8hfXHbwb7pio8qk_F9yGDQ"
+    );
+  }
+);
+
 app.listen(port, () => console.log(`listening on port ${port}`));
